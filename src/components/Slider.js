@@ -1,3 +1,4 @@
+import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 const data = [
   {
     id: 1,
@@ -43,7 +44,7 @@ const data = [
 
 const Slider = () => {
   return (
-    <div className="slider">
+    <div className="slider relative">
       {data.map((image) => (
         <div
           className="slide"
@@ -51,6 +52,18 @@ const Slider = () => {
           key={image.id}
         ></div>
       ))}
+      <div className="btn absolute z-[1] left-0 right-0 bottom-20 m-auto   text-2xl flex gap-10">
+        <button className="prev-btn">
+          <span>
+            <BsArrowLeft />
+          </span>
+        </button>
+        <button className="next-btn">
+          <span>
+            <BsArrowRight />
+          </span>
+        </button>
+      </div>
     </div>
   );
 };
