@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 const data = [
   {
@@ -34,7 +35,7 @@ const data = [
   },
   {
     id: 5,
-    src: "https://i.ibb.co/QvPxv65/smart-watch.jpg?fbclid=IwAR0vz1ZmNRgqpaV3yz_Aix5it4aEHQvKbpaAL2sJPNoS77wZjX9c8Fsfib0",
+    src: "https://www.apple.com/newsroom/images/product/watch/standard/Apple_delivers-apple-watch-series-6_09152020.jpg.landing-big_2x.jpg",
     headline: "Stay connected with smart watches",
     body: "Stay connected and on top of your day with our smart watches. Our selection offers a range of styles and features, including fitness tracking, phone notifications, and voice assistants. These watches are the perfect combination of functionality and style.",
     cta: "Connect with a smart watch",
@@ -43,22 +44,49 @@ const data = [
 ];
 
 const Slider = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const prevSlide = () => {
+    setCurrentSlide(
+      currentSlide === 0 ? data.length - 1 : (prevSlide) => prevSlide - 1
+    );
+  };
+
+  const nextSlide = () => {
+    setCurrentSlide(
+      currentSlide === data.length - 1 ? 0 : (prevSlide) => prevSlide + 1
+    );
+  };
+
   return (
-    <div className="slider relative">
-      {data.map((image) => (
-        <div
-          className="slide"
-          style={{ backgroundImage: `url(${image.src})` }}
-          key={image.id}
-        ></div>
-      ))}
-      <div className="btn absolute z-[1] left-0 right-0 bottom-20 m-auto   text-2xl flex gap-10">
-        <button className="prev-btn">
+    <div className="frame relative">
+      <div
+        className="slider"
+        style={{ transform: `translateX(-${100 * currentSlide}vw)` }}
+      >
+        {data.map((image) => (
+          <div
+            className="slide"
+            style={{ backgroundImage: `url(${image.src})` }}
+            key={image.id}
+          ></div>
+        ))}
+      </div>
+
+      <div className="btns absolute w-screen justify-center bottom-20 m-auto  z-[1] text-white text-2xl flex gap-10 ">
+        <button
+          onClick={prevSlide}
+          className="prev-btn h-14 w-20 flex justify-center items-center bg-violet-900 text-violet-200 border border-violet-200 hover:bg-gray-900 hover:text-gray-200 hover:border-gray-200 duration-300"
+        >
           <span>
             <BsArrowLeft />
           </span>
         </button>
-        <button className="next-btn">
+        <button
+          onClick={nextSlide}
+          s
+          className="next-btn h-14 w-20 flex justify-center items-center bg-violet-900 text-violet-200 border border-violet-200 hover:bg-gray-900 hover:text-gray-200 hover:border-gray-200 duration-300"
+        >
           <span>
             <BsArrowRight />
           </span>

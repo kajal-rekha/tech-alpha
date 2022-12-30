@@ -42,9 +42,10 @@ body {
 
 /* slider */
 .slider {
-  height: calc(100vh - 5rem);
+  height: calc(100vh - 1rem);
   width: 500vw;
   display: flex;
+  transition: 1s ease;
 }
 
 .slide {
