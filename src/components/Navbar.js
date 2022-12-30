@@ -19,7 +19,7 @@ const Navbar = () => {
           </Link>
           <Link to="/cart" className="cart-icon relative">
             <BsCart3 />
-            <span className="cart-counter absolute -top-3 -right-3 text-xs bg-orange-600 h-5 w-5 rounded-full flex items-center justify-center font-medium">
+            <span className="cart-counter absolute  z-[1] -top-3 -right-3 text-xs bg-orange-600 h-5 w-5 rounded-full flex items-center justify-center font-medium">
               10
             </span>
           </Link>

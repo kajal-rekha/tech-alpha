@@ -55,3 +55,25 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+/* Slide */
+.slide-btn {
+  position: relative;
+}
+
+.slide-btn::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f97316;
+  width: 0%;
+  transition: 0.3s ease;
+}
+
+.slide-btn:hover::before {
+  width: 100%;
+}
