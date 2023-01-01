@@ -37,7 +37,7 @@ const data = [
   },
   {
     id: 5,
-    src: "https://www.apple.com/newsroom/images/product/watch/standard/Apple_delivers-apple-watch-series-6_09152020.jpg.landing-big_2x.jpg",
+    src: "https://img.freepik.com/premium-photo/black-modern-smart-watch-mockup-with-strap-blank-screen-your-design-blue-background-3d-rendering_476612-18558.jpg?w=2000",
     headline: "Stay connected with smart watches",
     body: "Stay connected and on top of your day with our smart watches. Our selection offers a range of styles and features, including fitness tracking, phone notifications, and voice assistants. These watches are the perfect combination of functionality and style.",
     cta: "Connect with a smart watch",
