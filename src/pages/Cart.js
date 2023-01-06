@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import {
@@ -5,11 +6,14 @@ import {
   removeFromCart,
   decreaseCart,
   addToCart,
+  getSubtotal,
 } from "../features/products/cartSlice";
 import { currencyFormatter } from "../utilities/currencyFormatter";
 
 const Cart = () => {
-  const { cartItems: data } = useSelector((state) => state.cart);
+  const { cartItems: data, cartTotalAmount: subtotal } = useSelector(
+    (state) => state.cart
+  );
 
   const dispatch = useDispatch();
 
@@ -25,15 +29,20 @@ const Cart = () => {
     dispatch(addToCart(product));
   };
 
+  useEffect(() => {
+    dispatch(getSubtotal());
+  }, [data, dispatch]);
   return (
     <div className="cart-section container mx-auto py-10">
       <h2 className="section-title uppercase text-2xl font-bold space-font text-center mb-10">
-        {data.length > 0 ? "Your Cart" : "Your cart is empty"}
+        {data.length > 0
+          ? `You've added ${data.length} item${data.length > 1 ? "s" : ""}`
+          : "Your cart is empty"}
       </h2>
       <div className="text-center">
         {data.length === 0 && (
           <Link to="/products" className="text-center text-sky-500 block">
-            Start shopping now
+            ⬅ Start shopping now
           </Link>
         )}
       </div>
@@ -50,7 +59,10 @@ const Cart = () => {
 
             <div className="products flex flex-col">
               {data?.map((product) => (
-                <div className="product grid grid-cols-5 gap-10 border-b mt-10 pb-5">
+                <div
+                  key={product.id}
+                  className="product grid grid-cols-5 gap-10 border-b mt-10 pb-5"
+                >
                   <div className="left flex col-span-2 gap-5">
                     <img
                       src={product.image}
@@ -90,7 +102,7 @@ const Cart = () => {
                     </button>
                   </div>
                   <div className="total-price ml-auto">
-                    {currencyFormatter(product.price)}
+                    {currencyFormatter(product.price * product.cartQuantity)}
                   </div>
                 </div>
               ))}
@@ -106,7 +118,10 @@ const Cart = () => {
             <div className="flex flex-col items-start gap-2">
               <div className="top flex justify-between w-full text-2xl font-medium">
                 <span className="text-sky-500">Subtotal</span>
-                <span className="text-rose-500">$300</span>
+                <span className="text-rose-500">
+                  {" "}
+                  {currencyFormatter(subtotal)}
+                </span>
               </div>
               <p className="text-gray-400">
                 Taxes and shipping costs are calculated at the checkout
