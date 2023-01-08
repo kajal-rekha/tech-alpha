@@ -8,7 +8,7 @@ const NotFound = () => {
         src="https://cdni.iconscout.com/illustration/premium/thumb/404-error-alert-5759424-4816343.png"
         alt=""
       />
-      <p className="text-4xl mb-10 font-semibold text-rose-400">
+      <p className="text-4xl mb-4 font-semibold text-rose-400">
         Page not found
       </p>
       <Link to="/">

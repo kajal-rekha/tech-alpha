@@ -11,6 +11,7 @@ const Card = ({ product }) => {
     dispatch(addToCart(product));
     navigate("/cart");
   };
+
   return (
     <div className="product flex flex-col gap-2 bg-white shadow-md rounded-xl overflow-hidden hover:shadow-2xl duration-300">
       <div className="img">
