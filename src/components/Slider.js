@@ -82,7 +82,6 @@ const Slider = () => {
         </button>
         <button
           onClick={nextSlide}
-          s
           className="next-btn h-14 w-20 flex justify-center items-center bg-violet-900 text-violet-200 border border-violet-200 hover:bg-gray-900 hover:text-gray-200 hover:border-gray-200 duration-300"
         >
           <span>
