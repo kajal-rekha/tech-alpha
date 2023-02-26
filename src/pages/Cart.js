@@ -33,7 +33,7 @@ const Cart = () => {
     dispatch(getSubtotal());
   }, [data, dispatch]);
   return (
-    <div className="cart-section container mx-auto py-10">
+    <div className="cart-section container mx-auto py-10 ">
       <h2 className="section-title uppercase text-2xl font-bold space-font text-center mb-10">
         {data.length > 0
           ? `You've added ${data.length} item${data.length > 1 ? "s" : ""}`
@@ -61,9 +61,9 @@ const Cart = () => {
               {data?.map((product) => (
                 <div
                   key={product.id}
-                  className="product grid grid-cols-5 gap-10 border-b mt-10 pb-5"
+                  className="product grid md:grid-cols-5 grid-cols-2 gap-10 border-b mt-10 pb-5"
                 >
-                  <div className="left flex col-span-2 gap-5">
+                  <div className="left flex col-span-2 gap-5 md:col-span-2">
                     <img
                       src={product.image}
                       alt={product.name}
@@ -85,18 +85,18 @@ const Cart = () => {
                   <div className="counter flex">
                     <button
                       onClick={() => handleDecrease(product)}
-                      className="h-10 w-10 bg-gray-100 border border-gray-300 active:bg-gray-700"
+                      className="h-8 md:h-10 w-8 md:w-10 bg-gray-100 border border-gray-300 active:bg-gray-700 "
                     >
                       -
                     </button>
-                    <span className="h-10 w-10 bg-gray-100 flex justify-center items-center border border-gray-300">
+                    <span className="h-8 md:h-10 w-8 md:w-10bg-gray-100 flex justify-center items-center border border-gray-300 ">
                       {" "}
                       {product.cartQuantity}
                     </span>
 
                     <button
                       onClick={() => handleIncrease(product)}
-                      className="h-10 w-10 bg-gray-100 border border-gray-300 active:bg-gray-700"
+                      className="h-8 md:h-10 w-8 md:w-10 bg-gray-100  border border-gray-300 active:bg-gray-700"
                     >
                       +
                     </button>
@@ -108,33 +108,34 @@ const Cart = () => {
               ))}
             </div>
           </div>
-          <div className="cart-lower flex justify-between items-start py-10">
+
+          <div className="cart-lower flex flex-col-reverse items-center gap-10 md:flex-row md:justify-between md:items-start md:gap-0 py-10 px-5 md:px-0">
             <button
               onClick={() => dispatch(clearCart())}
-              className="clear-btn uppercase border py-3 px-8 hover:bg-rose-200 hover:text-rose-600 font-medium hover:border-rose-200 duration-300"
+              className="clear-btn uppercase border py-3 px-8 hover:bg-rose-200 hover:text-rose-600 font-medium text-sm md:text-lg hover:border-rose-200 duration-300"
             >
               Clear cart
             </button>
             <div className="flex flex-col items-start gap-2">
-              <div className="top flex justify-between w-full text-2xl font-medium">
+              <div className="top flex justify-between w-full md:text-2xl text-xl font-medium">
                 <span className="text-sky-500">Subtotal</span>
                 <span className="text-rose-500">
                   {" "}
                   {currencyFormatter(subtotal)}
                 </span>
               </div>
-              <p className="text-gray-400">
+              <p className="text-gray-400 text-sm md:text-lg text-justify">
                 Taxes and shipping costs are calculated at the checkout
               </p>
               <Link
                 to="/"
-                className="checkout bg-sky-500 w-full py-3 uppercase font-medium text-sky-50 tracking-widest hover:bg-sky-600 duration-300 text-center"
+                className="checkout bg-sky-500 w-full py-3 uppercase font-medium text-sky-50 tracking-widest hover:bg-sky-600 duration-300 text-center text-sm md-text-lg"
               >
                 Chechout
               </Link>
               <Link
                 to="/products"
-                className="continue uppercase text-sky-500 font-medium"
+                className="continue uppercase text-sky-500 font-medium "
               >
                 {" "}
                 ⬅ Continue shopping
