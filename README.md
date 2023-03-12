@@ -23,7 +23,7 @@ Tech Alpha is an online e-commerce store built with a focus on providing a seaml
 1. Clone the repository using the following command:
 
 `
-git clone https://github.com/<username>/tech-alpha.git
+git clone https://github.com/kajal-rekha/tech-alpha.git
 
 `
 
