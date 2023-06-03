@@ -5,7 +5,7 @@ Tech Alpha is an online e-commerce store that offers an intuitive shopping exper
 Tech Alpha is an online e-commerce store built with a focus on providing a seamless shopping experience to its customers. The project has been developed using the latest front-end technologies, including React, Redux, Redux Thunk, and Redux Toolkit. Data fetching has been achieved using Axios, which ensures a fast and reliable source of data.
 
 ## Project Features
-- Seamless Shopping Experience:Intuitive interface for effortless product browsing.
+- Seamless Shopping Experience: Intuitive interface for effortless product browsing.
 Smooth purchasing process for convenient transactions.
 - Streamlined State Management:Redux integration for efficient and scalable operations.
 Optimized handling of application state changes.
