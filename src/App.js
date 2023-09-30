@@ -8,8 +8,14 @@ import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Products from "./pages/Products";
 import "react-toastify/dist/ReactToastify.css";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const App = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <>
       <div className="app min-h-screen bg-gray-50 text-gray-700">
