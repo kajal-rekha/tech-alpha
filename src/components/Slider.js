@@ -37,7 +37,7 @@ const data = [
   },
   {
     id: 5,
-    src: "https://img.freepik.com/premium-photo/black-modern-smart-watch-mockup-with-strap-blank-screen-your-design-blue-background-3d-rendering_476612-18558.jpg?w=2000",
+    src: "https://media.wired.com/photos/650c80a777e4baffa125b82b/3:2/w_1280%2Cc_limit/Apple-Watch-SE-Gen-2-Featured-Gear.jpg",
     headline: "Stay connected with smart watches",
     body: "Stay connected and on top of your day with our smart watches. Our selection offers a range of styles and features, including fitness tracking, phone notifications, and voice assistants. These watches are the perfect combination of functionality and style.",
     cta: "Connect with a smart watch",
@@ -71,10 +71,12 @@ const Slider = () => {
         ))}
       </div>
 
-      <div className="btns absolute w-screen justify-center bottom-20 m-auto  z-[1] text-white text-2xl flex gap-10 ">
+      <div className="btns absolute w-screen justify-center bottom-10 lg:bottom-20 m-auto  z-[1] text-white text-2xl flex gap-10 ">
         <button
           onClick={prevSlide}
           className="prev-btn w-14 h-12 lg:h-14 lg:w-20 flex justify-center items-center bg-violet-900 text-violet-200 border border-violet-200 hover:bg-gray-900 hover:text-gray-200 hover:border-gray-200 duration-300"
+          data-aos="fade-right"
+          data-aos-duration="1000"
         >
           <span>
             <BsArrowLeft />
@@ -83,6 +85,8 @@ const Slider = () => {
         <button
           onClick={nextSlide}
           className="next-btn  w-14 h-12 lg:h-14 lg:w-20 flex justify-center items-center bg-violet-900 text-violet-200 border border-violet-200 hover:bg-gray-900 hover:text-gray-200 hover:border-gray-200 duration-300"
+          data-aos="fade-left"
+          data-aos-duration="1000"
         >
           <span>
             <BsArrowRight />

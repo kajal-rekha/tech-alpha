@@ -33,7 +33,7 @@ const Cart = () => {
     dispatch(getSubtotal());
   }, [data, dispatch]);
   return (
-    <div className="cart-section container mx-auto py-10 ">
+    <div className="cart-section wrapper py-10">
       <h2 className="section-title uppercase text-2xl font-bold space-font text-center mb-10">
         {data.length > 0
           ? `You've added ${data.length} item${data.length > 1 ? "s" : ""}`

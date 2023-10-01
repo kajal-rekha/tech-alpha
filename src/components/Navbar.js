@@ -6,13 +6,17 @@ const Navbar = () => {
   const { cartItems } = useSelector((state) => state.cart);
   return (
     <div className="navbar-bg bg-violet-700 text-violet-50 h-20 flex justify-center items-center">
-      <div className="navbar container mx-auto flex items-center justify-between">
-        <div className="left">
+      <div className="navbar wrapper flex items-center justify-between">
+        <div className="left" data-aos="fade-right" data-aos-duration="1000">
           <span className="text-xl font-semibold">
             tech <span className="text-orange-500">Alpha</span>
           </span>
         </div>
-        <div className="right flex items-center gap-5">
+        <div
+          className="right flex items-center gap-5"
+          data-aos="fade-down"
+          data-aos-duration="1000"
+        >
           <Link to="/" className="nav-link">
             Home
           </Link>
