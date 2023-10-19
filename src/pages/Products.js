@@ -8,7 +8,7 @@ const Products = () => {
     <div className="products-section container mx-auto py-10">
       <h2
         className="section-title uppercase text-2xl font-bold space-font text-center mb-10"
-        data-aos="fade-up"
+        data-aos="fade-down"
         data-aos-duration="1000"
       >
         Browse all products
